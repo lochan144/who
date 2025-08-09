@@ -20,7 +20,7 @@ export default function Portfolio() {
       case "about":
         return (
           <div className="space-y-6">
-            <h1 className="text-2xl font-medium text-gray-900">Your Name</h1>
+            <h1 className="text-2xl font-medium text-gray-900">Lochan S</h1>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 I am a designer and developer at{" "}
@@ -59,7 +59,7 @@ export default function Portfolio() {
 
             <div className="pt-4">
               <Link
-                href="/resume.pdf"
+                href="/My_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
