@@ -61,7 +61,7 @@ const CertificationsContent = () => {
 
   return (
     <div className="space-y-8">
-      {displayedCertifications.map((cert) => (
+      {displayedCertifications.map((cert, index) => (
         <div key={cert.id} className="space-y-2">
           <h2 className="text-lg font-medium text-gray-900">{cert.title}</h2>
           <p className="text-gray-600 text-base">{cert.institution} • {cert.year}</p>
@@ -78,6 +78,9 @@ const CertificationsContent = () => {
               Show Credentials →
             </Link>
           </div>
+          {index < displayedCertifications.length - 1 && (
+            <div className="pt-6 border-b border-gray-200"></div>
+          )}
         </div>
       ))}
       
@@ -133,7 +136,7 @@ export default function Portfolio() {
               </p>
               <p>
                 You can gain further insights into my background and interests through my{" "}
-                <button onClick={() => setActiveSection("projects")} className="text-gray-900 underline">
+                <button onClick={() => setActiveSection("projects")} className="text-gray-900 underline italic">
                   projects
                 </button>
                 .
@@ -309,49 +312,28 @@ export default function Portfolio() {
                 <div className="space-y-2">
                   <p className="text-gray-600 text-base">
                     <span className="font-medium">Email:</span>{" "}
-                    <Link href="mailto:your.email@example.com" className="text-gray-900 underline">
-                      your.email@example.com
+                    <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=lochan1917@gmail.com" className="text-gray-900 underline" target="_blank" rel="noopener noreferrer">
+                      lochan1917@gmail.com
                     </Link>
-                  </p>
-                  <p className="text-gray-600 text-base">
-                    <span className="font-medium">Phone:</span>{" "}
-                    <Link href="tel:+1234567890" className="text-gray-900 underline">
-                      +1 (234) 567-8900
-                    </Link>
-                  </p>
-                  <p className="text-gray-600 text-base">
-                    <span className="font-medium">Location:</span> San Francisco, CA
                   </p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <h2 className="text-lg font-medium text-gray-900">Social Links</h2>
-                <div className="space-y-2">
-                  <p className="text-gray-600 text-base">
-                    <Link href="#" className="text-gray-900 underline">
-                      LinkedIn
-                    </Link>{" "}
-                    - Professional network and career updates
-                  </p>
-                  <p className="text-gray-600 text-base">
-                    <Link href="#" className="text-gray-900 underline">
-                      GitHub
-                    </Link>{" "}
-                    - Code repositories and open source contributions
-                  </p>
-                  <p className="text-gray-600 text-base">
-                    <Link href="#" className="text-gray-900 underline">
-                      Twitter/X
-                    </Link>{" "}
-                    - Thoughts on tech and industry insights
-                  </p>
-                  <p className="text-gray-600 text-base">
-                    <Link href="#" className="text-gray-900 underline">
-                      Portfolio
-                    </Link>{" "}
-                    - Detailed case studies and project showcases
-                  </p>
+                <div className="flex flex-wrap gap-6">
+                  <Link href="https://www.linkedin.com/in/lochans" className="text-gray-900 underline hover:text-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </Link>
+                  <Link href="https://github.com/lochan144" className="text-gray-900 underline hover:text-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </Link>
+                  <Link href="https://x.com/Lochan144" className="text-gray-900 underline hover:text-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">
+                    Twitter/X
+                  </Link>
+                  <Link href="https://huggingface.co/lochan144" className="text-gray-900 underline hover:text-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">
+                    Hugging Face
+                  </Link>
                 </div>
               </div>
 
