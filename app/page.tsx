@@ -23,36 +23,19 @@ export default function Portfolio() {
             <h1 className="text-2xl font-medium text-gray-900">Lochan S</h1>
             <div className="space-y-4 text-gray-600 text-base leading-relaxed">
               <p>
-                I am a designer and developer at{" "}
-                <Link href="#" className="text-gray-900 underline">
-                  Company
-                </Link>
-                . My interests span a broad spectrum of subjects, encompassing web development, creative coding, game
-                design, and human-computer interaction.
+                I'm a final-year BCA student specializing in Data Analytics at Jain University, Bangalore, driven by curiosity for how data and intelligence shape real-world systems. My academic journey has steadily gravitated toward artificial intelligence and machine learning, where I'm most engaged in turning concepts into tangible, impactful solutions.
               </p>
               <p>
-                Since high school, I've spent years on algorithm competitions, freelance web design and development. In
-                2017, I earned my BSc degree in Computer Science from University, and joined as a software engineer at
-                Tech Company. In 2018, I joined Current Company to help build the next generation of developer tools
-                including the platform, frameworks, AI tools, and more.
+                I'm currently involved in a collaborative research initiative between Jain University and IIT Tirupati, focusing on positioning, navigation, and timing (PNT) technologies. This work has strengthened my skills in problem-solving, experimentation, and collaborating with interdisciplinary teams to tackle complex technical challenges.
+              </p>
+              <p>
+                My approach to technology is rooted in practicality—solutions must not only work but also serve a meaningful purpose. I'm constantly seeking opportunities to deepen my expertise in AI/ML while staying open to emerging areas where intelligent systems can bring measurable change.
               </p>
               <p>
                 You can gain further insights into my background and interests through my{" "}
                 <button onClick={() => setActiveSection("projects")} className="text-gray-900 underline">
                   projects
                 </button>
-                , find me on{" "}
-                <Link href="#" className="text-gray-900 underline">
-                  GitHub
-                </Link>
-                ,{" "}
-                <Link href="#" className="text-gray-900 underline">
-                  X/Twitter
-                </Link>
-                , and{" "}
-                <Link href="#" className="text-gray-900 underline">
-                  LinkedIn
-                </Link>
                 .
               </p>
             </div>
@@ -174,28 +157,24 @@ export default function Portfolio() {
 
             <div className="space-y-8">
               <div className="space-y-2">
-                <h2 className="text-lg font-medium text-gray-900">Master of Science in Computer Science</h2>
-                <p className="text-gray-600 text-base">Stanford University • 2019-2021</p>
+                <h2 className="text-lg font-medium text-gray-900">Bachelor of Computer Applications</h2>
+                <p className="text-gray-600 text-base">Jain Deemed-to-be University • Expected Graduation: May 2027</p>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Specialized in Human-Computer Interaction and Machine Learning. Thesis on "Improving User Experience
-                  in AI-Powered Applications through Adaptive Interfaces." GPA: 3.9/4.0
+                  Currently pursuing BCA with specialization in Data Analytics. Focus on building strong foundations in computer science fundamentals while exploring data-driven solutions and artificial intelligence applications.
+                </p>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  <span className="font-medium">Relevant Coursework:</span> CS Fundamentals, Software Engineering, Database Management System, Data Analytics
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h2 className="text-lg font-medium text-gray-900">Bachelor of Science in Computer Science</h2>
-                <p className="text-gray-600 text-base">University of California, Berkeley • 2015-2019</p>
+                <h2 className="text-lg font-medium text-gray-900">Higher Secondary Education (11th & 12th Commerce)</h2>
+                <p className="text-gray-600 text-base">MES Kishore Kendra • 2021-2023</p>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Graduated Magna Cum Laude with focus on Software Engineering and Data Structures. Active member of the
-                  Computer Science Honor Society and ACM student chapter. GPA: 3.8/4.0
+                  Completed higher secondary education with a commerce background. This diverse foundation provided analytical thinking skills and business acumen that complement my technical studies.
                 </p>
-              </div>
-
-              <div className="space-y-2">
-                <h2 className="text-lg font-medium text-gray-900">Relevant Coursework</h2>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Data Structures & Algorithms, Software Engineering, Database Systems, Machine Learning, Human-Computer
-                  Interaction, Web Development, Mobile App Development, Computer Networks, Operating Systems
+                  <span className="font-medium">Subjects:</span> Computer Science, Statistics, Business Studies, Accountancy
                 </p>
               </div>
             </div>
@@ -207,37 +186,31 @@ export default function Portfolio() {
           <div className="space-y-8">
             <h1 className="text-2xl font-medium text-gray-900">Experience</h1>
             <p className="text-gray-600 text-base leading-relaxed">
-              My professional journey and the roles that have shaped my expertise in software development and design.
+              My professional journey and research experiences that have shaped my expertise in technology, sustainability, and advanced research applications.
             </p>
 
             <div className="space-y-10">
               <div className="space-y-3">
-                <h2 className="text-lg font-medium text-gray-900">Senior Full Stack Developer</h2>
-                <p className="text-gray-600 text-base">Tech Innovations Inc. • 2022 - Present</p>
+                <h2 className="text-lg font-medium text-gray-900">Summer Research Intern, STAR-PNT Program</h2>
+                <p className="text-gray-600 text-base">Indian Institute of Technology, Tirupati • July 2024 - Present</p>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Lead development of scalable web applications serving 100K+ users. Architect and implement
-                  microservices using Node.js, React, and AWS. Mentor junior developers and collaborate with
-                  cross-functional teams to deliver high-quality products on time.
+                  Selected for the prestigious STAR-PNT Summer Internship Program, engaging in cutting-edge research at the intersection of satellite navigation, embedded systems, and signal intelligence. Working under guidance from leading faculty in Positioning, Navigation, and Tracking (PNT) systems, contributing to advanced research initiatives in collaboration between IIT Tirupati and Jain University.
                 </p>
               </div>
 
               <div className="space-y-3">
-                <h2 className="text-lg font-medium text-gray-900">Software Engineer</h2>
-                <p className="text-gray-600 text-base">Digital Solutions Corp. • 2020 - 2022</p>
+                <h2 className="text-lg font-medium text-gray-900">Frontend Developer</h2>
+                <p className="text-gray-600 text-base">GenX Reality • January 2025 - July 2025 (Remote)</p>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Developed and maintained multiple client-facing applications using React, TypeScript, and Python.
-                  Improved application performance by 40% through code optimization and database query improvements.
-                  Collaborated with UX designers to implement responsive and accessible user interfaces.
+                  Built a comprehensive landing page for the company, ensuring modern and user-friendly interface design. Contributed to AI/ML initiatives in augmented reality (AR) and virtual reality (VR) applications, supporting the development of immersive experiences. Additionally managed social media accounts to enhance online presence and engagement, demonstrating versatility in both technical development and digital marketing domains.
                 </p>
               </div>
 
               <div className="space-y-3">
-                <h2 className="text-lg font-medium text-gray-900">Frontend Developer Intern</h2>
-                <p className="text-gray-600 text-base">StartupXYZ • Summer 2019</p>
+                <h2 className="text-lg font-medium text-gray-900">Intern, Green Internship Program</h2>
+                <p className="text-gray-600 text-base">1M1B (1 Million for 1 Billion) • December 2024 - February 2025 (Remote)</p>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Built responsive web components using React and CSS. Participated in agile development processes and
-                  contributed to the company's main product used by thousands of customers. Gained experience in version
-                  control, testing, and deployment practices.
+                  Led sustainability campaigns that secured 50+ pledges while promoting green practices across various platforms. Conducted comprehensive energy audits and provided strategic waste-reduction recommendations for campus sustainability initiatives. Built an entire Tableau dashboard for tracking and visualizing key sustainability metrics, enabling data-driven decision making for environmental initiatives. Collaborated effectively with cross-functional teams to deliver projects on schedule while developing strong stakeholder engagement capabilities.
                 </p>
               </div>
             </div>
