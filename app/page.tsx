@@ -326,7 +326,7 @@ export default function Portfolio() {
       <div className="flex h-screen">
         {/* Sidebar */}
         <div className="w-48 bg-white border-r border-gray-200 p-8">
-          <nav className="space-y-2">
+          <nav className="space-y-2 pt-4">
             {sections.map((section) => (
               <button
                 key={section.id}
