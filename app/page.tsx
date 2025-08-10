@@ -3,6 +3,106 @@
 import { useState } from "react"
 import Link from "next/link"
 
+// Certifications data
+const certifications = [
+  {
+    id: 1,
+    title: "Statistics Foundations",
+    institution: "Meta",
+    year: "2025",
+    description: "Comprehensive foundation in statistical analysis, probability theory, and data interpretation techniques essential for data-driven decision making.",
+    credentialLink: "#"
+  },
+  {
+    id: 2,
+    title: "Generative AI: Introduction and Applications",
+    institution: "IBM",
+    year: "2024",
+    description: "Deep dive into generative artificial intelligence technologies, including large language models, prompt engineering, and practical AI applications.",
+    credentialLink: "#"
+  },
+  {
+    id: 3,
+    title: "Python Programming",
+    institution: "University of Michigan",
+    year: "2024",
+    description: "Advanced Python programming covering data structures, algorithms, object-oriented programming, and application development best practices.",
+    credentialLink: "#"
+  },
+  {
+    id: 4,
+    title: "Software Engineering: Modeling Software Systems using UML",
+    institution: "The Hong Kong University of Science and Technology",
+    year: "2024",
+    description: "Professional training in software modeling, system design using UML diagrams, and architectural planning for complex software systems.",
+    credentialLink: "#"
+  },
+  {
+    id: 5,
+    title: "The Bits and Bytes of Computer Networking",
+    institution: "Google",
+    year: "2024",
+    description: "Comprehensive understanding of network protocols, TCP/IP, network troubleshooting, and modern networking infrastructure fundamentals.",
+    credentialLink: "#"
+  },
+  {
+    id: 6,
+    title: "The Structured Query Language (SQL)",
+    institution: "University of Colorado Boulder",
+    year: "2024",
+    description: "Advanced SQL programming including complex queries, database design, optimization techniques, and data manipulation best practices.",
+    credentialLink: "#"
+  }
+]
+
+const CertificationsContent = () => {
+  const [showAll, setShowAll] = useState(false)
+  const displayedCertifications = showAll ? certifications : certifications.slice(0, 5)
+
+  return (
+    <div className="space-y-8">
+      {displayedCertifications.map((cert) => (
+        <div key={cert.id} className="space-y-2">
+          <h2 className="text-lg font-medium text-gray-900">{cert.title}</h2>
+          <p className="text-gray-600 text-base">{cert.institution} • {cert.year}</p>
+          <p className="text-gray-600 text-base leading-relaxed">
+            {cert.description}
+          </p>
+          <div className="pt-2">
+            <Link 
+              href={cert.credentialLink} 
+              className="text-sm text-gray-900 underline hover:text-gray-700 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Show Credentials →
+            </Link>
+          </div>
+        </div>
+      ))}
+      
+      {certifications.length > 5 && (
+        <div className="pt-4">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="inline-flex items-center text-gray-900 text-base font-medium hover:text-gray-700 transition-colors"
+          >
+            {showAll ? "View Less" : "View More"}
+            <svg 
+              className={`ml-2 w-4 h-4 transition-transform ${showAll ? 'rotate-180' : ''}`}
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about")
 
@@ -21,7 +121,7 @@ export default function Portfolio() {
         return (
           <div className="space-y-6">
             <h1 className="text-2xl font-medium text-gray-900">Lochan S</h1>
-            <div className="space-y-4 text-gray-600 text-base leading-relaxed">
+            <div className="space-y-5 text-gray-600 text-base leading-relaxed">
               <p>
                 I'm a final-year BCA student specializing in Data Analytics at Jain University, Bangalore, driven by curiosity for how data and intelligence shape real-world systems. My academic journey has steadily gravitated toward artificial intelligence and machine learning, where I'm most engaged in turning concepts into tangible, impactful solutions.
               </p>
@@ -66,41 +166,45 @@ export default function Portfolio() {
           <div className="space-y-8">
             <h1 className="text-2xl font-medium text-gray-900">Projects</h1>
             <p className="text-gray-600 text-base leading-relaxed">
-              Over the past years, I've been super lucky to work with some amazing people, on a variety of great
-              projects, ranging from open-source libraries to large-scale applications.
+              Here's a glimpse into my current research work and ongoing projects. I'm passionate about applying 
+              theoretical knowledge to solve real-world challenges in technology and data science.
             </p>
 
             <div className="space-y-12">
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
-                  <h2 className="text-lg font-medium text-gray-900">E-Commerce Platform</h2>
+                  <h2 className="text-lg font-medium text-gray-900">STAR-PNT Research Initiative</h2>
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    Currently Working
+                  </span>
                 </div>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Built a full-stack e-commerce platform using React, Node.js, and PostgreSQL. Implemented features like
-                  user authentication, payment processing, inventory management, and order tracking. The platform
-                  handles over 10,000 daily active users and processes thousands of transactions monthly.
+                  Actively contributing to cutting-edge research in Positioning, Navigation, and Timing (PNT) technologies 
+                  as part of a collaborative initiative between Jain University and IIT Tirupati. This research focuses on 
+                  satellite navigation systems, embedded systems integration, and signal intelligence applications. Working 
+                  with interdisciplinary teams to advance next-generation navigation technologies and their practical implementations 
+                  in various domains.
                 </p>
+                <div className="flex items-center space-x-4 text-sm text-gray-500">
+                  <span>• Satellite Navigation</span>
+                  <span>• Signal Processing</span>
+                  <span>• Embedded Systems</span>
+                  <span>• Research Collaboration</span>
+                </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
-                  <h2 className="text-lg font-medium text-gray-900">Mobile Task Manager</h2>
+                  <h2 className="text-lg font-medium text-gray-900">Additional Projects</h2>
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                    Coming Soon
+                  </span>
                 </div>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Developed a cross-platform mobile application using React Native for task management and productivity.
-                  Features include real-time synchronization, offline support, push notifications, and team
-                  collaboration tools. Published on both iOS and Android app stores with 4.8+ star ratings.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-2">
-                  <h2 className="text-lg font-medium text-gray-900">AI Content Generator</h2>
-                </div>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Created an AI-powered content generation tool using OpenAI's API and Next.js. The application helps
-                  content creators generate blog posts, social media content, and marketing copy. Implemented user
-                  authentication, subscription management, and usage analytics dashboard.
+                  I'm currently developing several exciting projects that showcase my expertise in data analytics, 
+                  machine learning, and software development. These projects will demonstrate practical applications 
+                  of AI/ML technologies and innovative solutions to contemporary challenges. Stay tuned for updates 
+                  on these upcoming initiatives.
                 </p>
               </div>
             </div>
@@ -113,37 +217,10 @@ export default function Portfolio() {
             <h1 className="text-2xl font-medium text-gray-900">Certifications</h1>
             <p className="text-gray-600 text-base leading-relaxed">
               Professional certifications and achievements that demonstrate my expertise and commitment to continuous
-              learning.
+              learning across data analytics, artificial intelligence, and software development.
             </p>
 
-            <div className="space-y-8">
-              <div className="space-y-2">
-                <h2 className="text-lg font-medium text-gray-900">AWS Certified Solutions Architect</h2>
-                <p className="text-gray-600 text-base">Amazon Web Services • 2023</p>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Demonstrated expertise in designing distributed systems on AWS, including compute, networking,
-                  storage, and database services.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <h2 className="text-lg font-medium text-gray-900">Google Cloud Professional Developer</h2>
-                <p className="text-gray-600 text-base">Google Cloud Platform • 2022</p>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Certified in building scalable and reliable applications using Google Cloud technologies and best
-                  practices.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <h2 className="text-lg font-medium text-gray-900">Meta React Developer Certificate</h2>
-                <p className="text-gray-600 text-base">Meta • 2022</p>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Comprehensive certification covering React fundamentals, advanced patterns, testing, and performance
-                  optimization.
-                </p>
-              </div>
-            </div>
+            <CertificationsContent />
           </div>
         )
 
