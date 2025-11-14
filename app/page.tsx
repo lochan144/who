@@ -55,6 +55,98 @@ const certifications = [
   }
 ]
 
+const ContactForm = () => {
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "5e02e308-7f21-46ad-b686-3f06aabf6a73",
+          email: email,
+          message: message,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus("success")
+        setEmail("")
+        setMessage("")
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="space-y-2">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-900">
+          Your Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all text-gray-900 bg-white"
+          placeholder="your.email@example.com"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-900">
+          Message
+        </label>
+        <textarea
+          id="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+          rows={5}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all resize-none text-gray-900 bg-white"
+          placeholder="Your message here..."
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="inline-flex items-center px-6 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
+      </button>
+
+      {submitStatus === "success" && (
+        <p className="text-sm text-green-600">Message sent successfully! I'll get back to you soon.</p>
+      )}
+
+      {submitStatus === "error" && (
+        <p className="text-sm text-red-600">Failed to send message. Please try again or email me directly.</p>
+      )}
+    </form>
+  )
+}
+
 const CertificationsContent = () => {
   const [showAll, setShowAll] = useState(false)
   const displayedCertifications = showAll ? certifications : certifications.slice(0, 5)
@@ -343,6 +435,11 @@ export default function Portfolio() {
                   I'm currently open to new opportunities and interesting projects. Whether you're looking for a
                   full-time developer, consultant, or collaborator, I'd love to hear about what you're working on.
                 </p>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-lg font-medium text-gray-900">Send a Message</h2>
+                <ContactForm />
               </div>
             </div>
           </div>
