@@ -8,9 +8,16 @@ const ContactForm = () => {
   const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!accessKey) {
+      setSubmitStatus("error")
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
@@ -22,7 +29,7 @@ const ContactForm = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "5e02e308-7f21-46ad-b686-3f06aabf6a73",
+          access_key: accessKey,
           email: email,
           message: message,
         }),
